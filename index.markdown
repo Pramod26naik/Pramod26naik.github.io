@@ -4,3 +4,6 @@
 
 layout: home
 ---
+
+<h1>Welcome to My Awesome Site</h1>
+<p>This is the home page content. Edit this to change what appears on your home page.</p>
