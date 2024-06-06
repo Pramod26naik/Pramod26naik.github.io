@@ -1,0 +1,94 @@
+/* Custom CSS for Chocolate Brown Theme */
+
+/* Color Variables */
+:root {
+    --chocolate-brown: #5D4037;
+    --dark-brown: #3E2723;
+    --light-brown: #8D6E63;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, var(--chocolate-brown), var(--dark-brown));
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.info {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.contact {
+    margin-top: 20px;
+}
+
+.contact a {
+    color: var(--chocolate-brown);
+    text-decoration: none;
+    font-weight: bold;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.contact a:hover {
+    background: var(--chocolate-brown);
+    color: #fff;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--chocolate-brown);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+
+    .info {
+        font-size: 1em;
+    }
+}
