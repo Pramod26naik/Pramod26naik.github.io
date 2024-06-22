@@ -46,7 +46,7 @@ nav ul li a:hover {
 /* Section styling */
 .section {
     padding: 5rem 2rem;
-    min-height: 100vh;
+    min-height: 100.1vh;
     display: flex;
     align-items: center;
     justify-content: center;
