@@ -1,48 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pramod Naik | Portfolio</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/home.css">
-    <script src="{{ site.baseurl }}/assets/js/home.js" defer></script>
+    <title>Netflix Case Study</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2b2b2b;
+            color: #fff;
+        }
+
+        /* Navbar styling */
+        header {
+            background-color: #1a1a1a;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        /* Section styling */
+        .section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            margin-top: 60px; /* Offset for fixed navbar */
+        }
+
+        .content-box {
+            background-color: #444;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .content-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-
-<header>
-    <nav>
-        <ul>
-            <li><a href="#intro">Introduction</a></li>
-            <li><a href="#business-cases">Business Cases</a></li>
-            <li><a href="#codes">Codes</a></li>
-            <li><a href="#performance-analysis">Performance Analysis</a></li>
-        </ul>
-    </nav>
-</header>
-<section id="intro" class="section">
-    <div class="content-box">
-        <h2>Introduction</h2>
-        <p>Netflix, founded in 1997, has revolutionized the streaming industry by evolving from a DVD rental service to a global leader in video-on-demand with over 200 million subscribers...</p>
-    </div>
-</section>
-<section id="business-cases" class="section">
-    <div class="content-box">
-        <h2>Business Cases</h2>
-        <p>Here we discuss various business cases such as Video Playback, Search, Video Recommendations, and more...</p>
-    </div>
-</section>
-<section id="codes" class="section">
-    <div class="content-box">
-        <h2>Codes</h2>
-        <p>For each business case, link to relevant code snippets from public repositories or your own implementations...</p>
-    </div>
-</section>
-<section id="performance-analysis" class="section">
-    <div class="content-box">
-        <h2>Performance Analysis</h2>
-        <p>The space and time complexity of the identified algorithms are presented...</p>
-    </div>
-</section>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#business-cases">Business Cases</a></li>
+                <li><a href="#codes">Codes</a></li>
+                <li><a href="#performance-analysis">Performance Analysis</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="intro" class="section">
+        <div class="content-box">
+            <h2>Introduction</h2>
+            <p>Netflix, founded in 1997, has revolutionized the streaming industry by evolving from a DVD rental service to a global leader in video-on-demand with over 200 million subscribers...</p>
+        </div>
+    </section>
+    <section id="business-cases" class="section">
+        <div class="content-box">
+            <h2>Business Cases</h2>
+            <p>Here we discuss various business cases such as Video Playback, Search, Video Recommendations, and more...</p>
+        </div>
+    </section>
+    <section id="codes" class="section">
+        <div class="content-box">
+            <h2>Codes</h2>
+            <p>For each business case, link to relevant code snippets from public repositories or your own implementations...</p>
+        </div>
+    </section>
+    <section id="performance-analysis" class="section">
+        <div class="content-box">
+            <h2>Performance Analysis</h2>
+            <p>The space and time complexity of the identified algorithms are presented...</p>
+        </div>
+    </section>
 </body>
-
 </html>
