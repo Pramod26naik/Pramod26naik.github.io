@@ -1,332 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Netflix Case Study</title>
-  <style>
-    /* Reset CSS */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Body styling */
-    body {
-      font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
-      background-color: #232323;
-      color: #fff;
-      font-size: 24px;
-    }
-
-    /* Navbar styling */
-    header {
-      background-color: #414141;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-    }
-
-    nav {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      justify-content: space-evenly;
-      align-items: center;
-      padding: 1rem;
-    }
-
-    .menu {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      padding: 1rem 0;
-      gap: 0.5rem;
-    }
-
-    .menu li {
-      margin: 0.5rem 0;
-    }
-
-    .menu li a {
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-      margin: 5px;
-    }
-
-    .menu li a:hover {
-      color: #E50914;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      background: #fff;
-      border-radius: 2px;
-      display: block;
-      height: 3px;
-      margin: 5px 0;
-      width: 25px;
-    }
-
-    /* Section styling */
-    .section {
-      padding: 5rem 2rem;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #000000;
-      margin-top: 70px; /* Offset for fixed navbar */
-    }
-
-    .content-box {
-      background-color: #414141;
-      padding: 5rem;
-      line-height: 1.5;
-      font-size: 1.5vw;
-      font-weight: 600;
-      margin: 0 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
-      max-width: 1200px;
-      width: 100%;
-    }
-
-    .content-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    }
-
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Objective boxes styling */
-    .objectives {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .objective {
-      background-color: #414141;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .objective:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    }
-
-    /* Objective text styling */
-    .objective h3 {
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-    }
-
-    .objective p {
-      color: #fff;
-    }
-
-    .net_logo {
-      background-color: #000000;
-      margin: 0 auto;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 30px;
-    }
-    .netl{
-        height:160px ;
-        width: 600px;
-    }
-
-    /* Responsive styling */
-    @media (max-width: 800px) {
-        .content-box{
-            font-size: 1.4vw;
-        }
-  nav {
-    flex-direction: column; /* Ensure nav items are in a row */
-    justify-content: space-between;
-    align-items: center;
-  }
-.netl{
-    height: 70px;
-    width: 250px;
-}
-  .menu {
-    display: none; /* Hide regular menu items by default */
-    flex-direction: column; /* Ensure menu items are in a row */
-    list-style: none;
-    padding: 0;
-    gap: 1rem; /* Adjust spacing between menu items */
-  }
-
-  .menu.show {
-    display: flex; /* Show menu items when .show class is added */
-  }
-
-  .menu li {
-    margin: 0;
-  }
-
-  .hamburger {
-    display: flex; /* Show hamburger icon */
-    flex-direction: column;
-    display: flex;
-    flex-direction: left;
-    cursor: pointer;
-  }
-}
-
-
-
-    @media (max-width: 480px) {
-      .content-box{
-        font-size: 1.3vw;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Case Study</title>
+    <style>
+      /* Reset CSS */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .netl{
-    height: 50px;
-    width: 220px;
-}
-      .content-box {
+
+      /* Body styling */
+      body {
+        font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto,
+          Ubuntu, sans-serif;
+        background-color: #232323;
+        color: #fff;
+        font-size: 24px;
+      }
+
+      /* Navbar styling */
+      header {
+        background-color: #414141;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+      }
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
         padding: 1rem;
       }
 
-      .section {
-        padding: 2rem 1rem;
+      .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 1rem 0;
+        gap: 0.5rem;
       }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <ul class="menu">
-        <li><a href="#intro">Introduction</a></li>
-        <li><a href="#objectives">Objectives</a></li>
-        <li><a href="#business-cases">Business Cases</a></li>
-        <li><a href="#codes">Codes</a></li>
-        <li><a href="#performance-analysis">Performance Analysis</a></li>
-      </ul>
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
-  </header>
-  <section id="intro" class="section">
-    <div class="content-box">
-      <div class="net_logo">
-        <img class="netl" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1198px-Netflix_2015_logo.svg.png?20190206123158" alt="Netflix Logo" />
-      </div>
-      <p>
-        Netflix, founded in 1997, has revolutionized the streaming industry by
-        evolving from a DVD rental service to a global leader in
-        video-on-demand with over 200 million subscribers. The platform's
-        target audience includes tech-savvy users across various age groups,
-        primarily teenagers, college students, entrepreneurs, and working
-        professionals. Netflix's success is driven by its customer-centric
-        approach, utilizing personalized content recommendations, multi-device
-        accessibility, and innovative marketing strategies. Continuous data
-        analysis and adaptation to market needs have cemented Netflix's
-        position as a frontrunner in the digital streaming market.
-      </p>
-    </div>
-  </section>
-  <section id="objectives" class="section">
-    <div class="content-box objectives">
-      <div class="objective">
-        <h3>Enhance User Experience</h3>
-        <p>
-          Improve the overall user interface and experience to ensure a smooth
-          and engaging streaming journey.
-        </p>
-      </div>
-      <div class="objective">
-        <h3>Optimize Content Discovery</h3>
-        <p>
-          Make it easier for users to find content they love through advanced
-          recommendation systems.
-        </p>
-      </div>
-      <div class="objective">
-        <h3>Increase User Engagement</h3>
-        <p>
-          Boost user interaction and engagement with the platform through
-          personalized content and features.
-        </p>
-      </div>
-      <div class="objective">
-        <h3>Expand Global Reach</h3>
-        <p>
-          Grow the platform's presence and accessibility across different
-          regions and demographics worldwide.
-        </p>
-      </div>
-      <div class="objective">
-        <h3>Innovate Continuously</h3>
-        <p>
-          Constantly introduce new technologies and features to stay ahead in
-          the competitive streaming market.
-        </p>
-      </div>
-    </div>
-  </section>
-  <section id="business-cases" class="section">
-    <div class="content-box">
-      <h2>Business Cases</h2>
-      <p>
-        Here we discuss various business cases such as Video Playback, Search,
-        Video Recommendations, and more...
-      </p>
-    </div>
-  </section>
-  <section id="codes" class="section">
-    <div class="content-box">
-      <h2>Codes</h2>
-      <p>
-        For each business case, link to relevant code snippets from public
-        repositories or your own implementations...
-      </p>
-    </div>
-  </section>
-  <section id="performance-analysis" class="section">
-    <div class="content-box">
-      <h2>Performance Analysis</h2>
-      <p>
-        The space and time complexity of the identified algorithms are
-        presented...
-      </p>
-    </div>
-  </section>
-  <script>
-    function toggleMenu() {
-  const menu = document.querySelector('.menu');
-  menu.classList.toggle('show');
+
+      .menu li {
+        margin: 0.5rem 0;
+      }
+
+      .menu li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+        margin: 5px;
+      }
+
+      .menu li a:hover {
+        color: #e50914;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        background: #fff;
+        border-radius: 2px;
+        display: block;
+        height: 3px;
+        margin: 5px 0;
+        width: 25px;
+      }
+
+      /* Section styling */
+      .section {
+        padding: 5rem 2rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000000;
+        margin-top: 10px; /* Offset for fixed navbar */
+      }
+
+      .content-box {
+        background-color: #414141;
+        padding: 5rem;
+        line-height: 1.5;
+        font-size: 1.5vw;
+        font-weight: 600;
+        margin: 0 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      .content-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Objective boxes styling */
+      .objectives {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  background-image: url('https://images2.minutemediacdn.com/image/fetch/w_736,h_485,c_fill,g_auto,f_auto/https%3A%2F%2Fwinteriscoming.net%2Ffiles%2F2018%2F11%2FScreen-Shot-2018-11-01-at-10.33.56-AM-850x560.jpg');
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-  </script>
-</body>
+
+      .objective {
+        background-color: #4141419c;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .objective:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Objective text styling */
+      .objective h3 {
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+      }
+
+      .objective p {
+        color: #fff;
+      }
+
+      .net_logo {
+        background-color: #000000;
+        margin: 0 auto;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+      .netl {
+        height: 450px;
+        width: 900px;
+      }
+
+      /* Responsive styling */
+      @media (max-width: 800px) {
+        .content-box {
+          font-size: 1.4vw;
+        }
+        nav {
+          flex-direction: column; /* Ensure nav items are in a row */
+          justify-content: space-between;
+          align-items: center;
+        }
+        .netl {
+          height: 70px;
+          width: 250px;
+        }
+        .menu {
+          display: none; /* Hide regular menu items by default */
+          flex-direction: column; /* Ensure menu items are in a row */
+          list-style: none;
+          padding: 0;
+          gap: 1rem; /* Adjust spacing between menu items */
+        }
+
+        .menu.show {
+          display: flex; /* Show menu items when .show class is added */
+        }
+
+        .menu li {
+          margin: 0;
+        }
+
+        .hamburger {
+          display: flex; /* Show hamburger icon */
+          flex-direction: column;
+          display: flex;
+          flex-direction: left;
+          cursor: pointer;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content-box {
+          font-size: 1.3vw;
+        }
+        .netl {
+          height: 50px;
+          width: 220px;
+        }
+        .content-box {
+          padding: 1rem;
+        }
+
+        .section {
+          padding: 2rem 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#objectives">Objectives</a></li>
+          <li><a href="#business-cases">Business Cases</a></li>
+          <li><a href="#codes">Codes</a></li>
+          <li><a href="#performance-analysis">Performance Analysis</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+    <section id="intro" class="section">
+      <div class="content-box">
+        <div class="net_logo">
+          <img
+            class="netl"
+            src="https://studycafe.in/cdn-cgi/image/fit=contain,format=webp,gravity=auto,metadata=none,quality=80,width=1200,height=730/wp-content/uploads/2024/04/Netflix-job-vacancy.jpg"
+            alt="Netflix Logo"
+          />
+        </div>
+        <p>
+          Founded in 1997, Netflix transformed from a DVD rental service to a
+          leading video-on-demand platform with over 200 million subscribers.
+          Catering to tech-savvy users, including teenagers, college students,
+          entrepreneurs, and professionals, Netflix thrives on its
+          customer-centric approach. Its success stems from personalized content
+          recommendations, multi-device accessibility, and innovative marketing.
+          Continuous data analysis and market adaptation have solidified
+          Netflix's leadership in digital streaming.
+        </p>
+      </div>
+    </section>
+    <section id="objectives" class="section">
+      <div class="content-box objectives">
+        <div class="objective">
+          <h3>Enhance User Experience</h3>
+          <p>
+            Improve the overall user interface and experience to ensure a smooth
+            and engaging streaming journey.
+          </p>
+        </div>
+        <div class="objective">
+          <h3>Optimize Content Discovery</h3>
+          <p>
+            Make it easier for users to find content they love through advanced
+            recommendation systems.
+          </p>
+        </div>
+        <div class="objective">
+          <h3>Increase User Engagement</h3>
+          <p>
+            Boost user interaction and engagement with the platform through
+            personalized content and features.
+          </p>
+        </div>
+        <div class="objective">
+          <h3>Expand Global Reach</h3>
+          <p>
+            Grow the platform's presence and accessibility across different
+            regions and demographics worldwide.
+          </p>
+        </div>
+        <div class="objective">
+          <h3>Innovate Continuously</h3>
+          <p>
+            Constantly introduce new technologies and features to stay ahead in
+            the competitive streaming market.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="business-cases" class="section">
+      <div class="content-box">
+        <h2>Business Cases</h2>
+        <p>
+          Here we discuss various business cases such as Video Playback, Search,
+          Video Recommendations, and more...
+        </p>
+      </div>
+    </section>
+    <section id="codes" class="section">
+      <div class="content-box">
+        <h2>Codes</h2>
+        <p>
+          For each business case, link to relevant code snippets from public
+          repositories or your own implementations...
+        </p>
+      </div>
+    </section>
+    <section id="performance-analysis" class="section">
+      <div class="content-box">
+        <h2>Performance Analysis</h2>
+        <p>
+          The space and time complexity of the identified algorithms are
+          presented...
+        </p>
+      </div>
+    </section>
+    <script>
+      function toggleMenu() {
+        const menu = document.querySelector(".menu");
+        menu.classList.toggle("show");
+      }
+    </script>
+  </body>
 </html>
