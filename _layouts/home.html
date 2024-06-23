@@ -1,337 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix Case Study</title>
-    <style>
-      /* Reset CSS */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
-      /* Body styling */
-      body {
-        font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto,
-          Ubuntu, sans-serif;
-        background-color: #232323;
-        color: #fff;
-        font-size: 24px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Case Study</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      /* Navbar styling */
-      header {
-        background-color: #414141;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-      }
+    /* Body styling */
+    body {
+      font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto,
+        Ubuntu, sans-serif;
+      background-color: #232323;
+      color: #fff;
+      font-size: 24px;
+    }
 
-      nav {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 1rem;
-      }
+    /* Navbar styling */
+    header {
+      background-color: #414141;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    }
 
-      .menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        padding: 1rem 0;
-        gap: 0.5rem;
-      }
+    nav {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 1rem;
+    }
 
-      .menu li {
-        margin: 0.5rem 0;
-      }
+    .menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      padding: 1rem 0;
+      gap: 0.5rem;
+    }
 
-      .menu li a {
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 1.2rem;
-        transition: color 0.3s;
-        margin: 5px;
-      }
+    .menu li {
+      margin: 0.5rem 0;
+    }
 
-      .menu li a:hover {
-        color: #e50914;
-      }
+    .menu li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+      margin: 5px;
+    }
 
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-      }
+    .menu li a:hover {
+      color: #e50914;
+    }
 
-      .hamburger span {
-        background: #fff;
-        border-radius: 2px;
-        display: block;
-        height: 3px;
-        margin: 5px 0;
-        width: 25px;
-      }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-      /* Section styling */
-      .section {
-        padding: 5rem 2rem;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #000000;
-        margin-top: 10px; /* Offset for fixed navbar */
-      }
+    .hamburger span {
+      background: #fff;
+      border-radius: 2px;
+      display: block;
+      height: 3px;
+      margin: 5px 0;
+      width: 25px;
+    }
 
-      .content-box {
-        background-color: #414141;
-        padding: 5rem;
-        line-height: 1.5;
-        font-size: 1.5vw;
-        font-weight: 600;
-        margin: 0 1rem;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s, box-shadow 0.3s;
-        max-width: 1200px;
-        width: 100%;
-      }
-
-      .content-box:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-      }
-
-      /* Smooth scrolling */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Objective boxes styling */
-      .objectives {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-  background-image: url('https://images2.minutemediacdn.com/image/fetch/w_736,h_485,c_fill,g_auto,f_auto/https%3A%2F%2Fwinteriscoming.net%2Ffiles%2F2018%2F11%2FScreen-Shot-2018-11-01-at-10.33.56-AM-850x560.jpg');
-  background-size:cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    /* Section styling */
+    .section {
+      padding: 5rem 2rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000000;
+      margin-top: 10px;
+      /* Offset for fixed navbar */
+    }
+    #c1 {
+  background-image: url('https://i.pinimg.com/originals/42/cb/45/42cb45faf80b01264f6d5ef84a4554af.jpg'); /* Replace with your actual image URL */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+   /* Makes the container full viewport height */
 }
 
 
-      .objective {
-        background-color: #4141419c;
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s, box-shadow 0.3s;
+    .content-box {
+      background-color: #414141;
+      padding: 5rem;
+      line-height: 1.5;
+      font-size: 1.5vw;
+      font-weight: 600;
+      margin: 0 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .content-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Objective boxes styling */
+    .objectives {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+      background-image: url('https://images2.minutemediacdn.com/image/fetch/w_736,h_485,c_fill,g_auto,f_auto/https%3A%2F%2Fwinteriscoming.net%2Ffiles%2F2018%2F11%2FScreen-Shot-2018-11-01-at-10.33.56-AM-850x560.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .objective {
+      background-color: #4141419c;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .objective:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Objective text styling */
+    .objective h3 {
+      color: #ffaa00;
+      margin-bottom: 0.5rem;
+    }
+
+    .objective p {
+      color: #fff;
+    }
+
+    .net_logo {
+      margin: 0 auto;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .netl {
+      height: 11vw;
+      width: 35vw;
+    }
+
+    /* Business Cases styling */
+    .business-case {
+      margin-bottom: 2rem;
+    }
+
+    .business-case h3 {
+      color: #e50914;
+      margin-bottom: 0.5rem;
+    }
+
+    .business-case p {
+      color: #fff;
+    }
+
+    /* Algorithm Box Styling */
+    .algorithm-box {
+      background-color: #323232a2;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .algorithm-box h4 {
+      color: #ffaa00;
+      margin-bottom: 0.5rem;
+    }
+
+    .algorithm-box p {
+      color: #fff;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 800px) {
+      .content-box {
+        font-size: 1.4vw;
       }
 
-      .objective:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-      }
-
-      /* Objective text styling */
-      .objective h3 {
-        color: #ffffff;
-        margin-bottom: 0.5rem;
-      }
-
-      .objective p {
-        color: #fff;
-      }
-
-      .net_logo {
-        /* background-color: #000000; */
-        margin: 0 auto;
-        padding: 5px;
-        display: flex;
+      nav {
+        flex-direction: column;
+        /* Ensure nav items are in a row */
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        margin-bottom: 30px;
       }
+
       .netl {
-        height: 11vw;
-        width: 35vw;
+        height: 70px;
+        width: 250px;
       }
 
-      /* Responsive styling */
-      @media (max-width: 800px) {
-        .content-box {
-          font-size: 1.4vw;
-        }
-        nav {
-          flex-direction: column; /* Ensure nav items are in a row */
-          justify-content: space-between;
-          align-items: center;
-        }
-        .netl {
-          height: 70px;
-          width: 250px;
-        }
-        .menu {
-          display: none; /* Hide regular menu items by default */
-          flex-direction: column; /* Ensure menu items are in a row */
-          list-style: none;
-          padding: 0;
-          gap: 1rem; /* Adjust spacing between menu items */
-        }
-
-        .menu.show {
-          display: flex; /* Show menu items when .show class is added */
-        }
-
-        .menu li {
-          margin: 0;
-        }
-
-        .hamburger {
-          display: flex; /* Show hamburger icon */
-          flex-direction: column;
-          display: flex;
-          flex-direction: left;
-          cursor: pointer;
-        }
+      .menu {
+        display: none;
+        /* Hide regular menu items by default */
+        flex-direction: column;
+        /* Ensure menu items are in a row */
+        list-style: none;
+        padding: 0;
+        gap: 1rem;
+        /* Adjust spacing between menu items */
       }
 
-      @media (max-width: 480px) {
-        .content-box {
-          font-size: 1.3vw;
-        }
-        .netl {
-          height: 50px;
-          width: 220px;
-        }
-        .content-box {
-          padding: 1rem;
-        }
-
-        .section {
-          padding: 2rem 1rem;
-        }
+      .menu.show {
+        display: flex;
+        /* Show menu items when .show class is added */
       }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul class="menu">
-          <li><a href="#intro">Introduction</a></li>
-          <li><a href="#objectives">Objectives</a></li>
-          <li><a href="#business-cases">Business Cases</a></li>
-          <li><a href="#codes">Codes</a></li>
-          <li><a href="#performance-analysis">Performance Analysis</a></li>
-        </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </header>
-    <section id="intro" class="section">
-      <div class="content-box">
-        <div class="net_logo">
-          <img
-            class="netl"
-            src="https://1000logos.net/wp-content/uploads/2017/05/Netflix-symbol.jpg"
-            alt="Netflix Logo"
-          />
-        </div>
-        <p>
-          Founded in 1997, Netflix transformed from a DVD rental service to a
-          leading video-on-demand platform with over 200 million subscribers.
-          Catering to tech-savvy users, including teenagers, college students,
-          entrepreneurs, and professionals, Netflix thrives on its
-          customer-centric approach. Its success stems from personalized content
-          recommendations, multi-device accessibility, and innovative marketing.
-          Continuous data analysis and market adaptation have solidified
-          Netflix's leadership in digital streaming.
-        </p>
+
+      .menu li {
+        margin: 0;
+      }
+
+      .hamburger {
+        display: flex;
+        /* Show hamburger icon */
+        flex-direction: column;
+        display: flex;
+        flex-direction: left;
+        cursor: pointer;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content-box {
+        font-size: 1.3vw;
+      }
+
+      .netl {
+        height: 50px;
+        width: 220px;
+      }
+
+      .content-box {
+        padding: 1rem;
+      }
+
+      .section {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#objectives">Objectives</a></li>
+        <li><a href="#business-cases">Business Cases</a></li>
+        <li><a href="#codes">Codes</a></li>
+        <li><a href="#performance-analysis">Performance Analysis</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </section>
+    </nav>
+  </header>
+  <section id="intro" class="section">
+    <div class="content-box">
+      <div class="net_logo">
+        <img class="netl" src="https://1000logos.net/wp-content/uploads/2017/05/Netflix-symbol.jpg"
+          alt="Netflix Logo" />
+      </div>
+      <p>
+        Founded in 1997, Netflix transformed from a DVD rental service to a
+        leading video-on-demand platform with over 200 million subscribers.
+        Catering to tech-savvy users, including teenagers, college students,
+        entrepreneurs, and professionals, Netflix thrives on its
+        customer-centric approach. Its success stems from personalized content
+        recommendations, multi-device accessibility, and innovative marketing.
+        Continuous data analysis and market adaptation have solidified
+        Netflix's leadership in digital streaming.
+      </p>
+    </div>
+  </section>
+  <section id="objectives" class="section">
     <section id="objectives" class="section">
       <div class="content-box objectives">
         <div class="objective">
           <h3>Enhance User Experience</h3>
-          <p>
-            Improve the overall user interface and experience to ensure a smooth
-            and engaging streaming journey.
-          </p>
+          <p>Improve the overall user interface and experience to ensure a smooth and engaging streaming journey.</p>
         </div>
         <div class="objective">
           <h3>Optimize Content Discovery</h3>
-          <p>
-            Make it easier for users to find content they love through advanced
-            recommendation systems.
-          </p>
+          <p>Make it easier for users to find content they love through advanced recommendation systems.</p>
         </div>
         <div class="objective">
           <h3>Increase User Engagement</h3>
-          <p>
-            Boost user interaction and engagement with the platform through
-            personalized content and features.
-          </p>
+          <p>Boost user interaction and engagement with the platform through personalized content and features.</p>
         </div>
         <div class="objective">
           <h3>Expand Global Reach</h3>
-          <p>
-            Grow the platform's presence and accessibility across different
-            regions and demographics worldwide.
-          </p>
+          <p>Grow the platform's presence and accessibility across different regions and demographics worldwide.</p>
         </div>
         <div class="objective">
           <h3>Innovate Continuously</h3>
-          <p>
-            Constantly introduce new technologies and features to stay ahead in
-            the competitive streaming market.
-          </p>
+          <p>Constantly introduce new technologies and features to stay ahead in the competitive streaming market.</p>
         </div>
       </div>
     </section>
-    <section id="business-cases" class="section">
-      <div class="content-box">
-        <h2>Business Cases</h2>
+  </section>
+  <section id="business-cases" class="section">
+    <div class="content-box" id="c1">
+      <h1>Business cases</h1>
+      <div class="algorithm-box">
+        <h4>Video Playback: Ensuring smooth playback despite varying network conditions</h4>
         <p>
-          Here we discuss various business cases such as Video Playback, Search,
-          Video Recommendations, and more...
+          Heap Design: Manages video buffering, prioritizing segments closest to the playback position.
+          Sliding Window: Maintains a fixed-size buffer for continuous streaming.
         </p>
       </div>
-    </section>
-    <section id="codes" class="section">
-      <div class="content-box">
-        <h2>Codes</h2>
+      
+      <div class="algorithm-box">
+        <h4>Search Functionality: Providing accurate and relevant search results quickly</h4>
         <p>
-          For each business case, link to relevant code snippets from public
-          repositories or your own implementations...
+          Trie Data Structure: Efficiently stores and retrieves strings, useful for autocomplete suggestions.
+          TF-IDF (Term Frequency-Inverse Document Frequency): Ranks search results based on relevance to the search query.
         </p>
       </div>
-    </section>
-    <section id="performance-analysis" class="section">
-      <div class="content-box">
-        <h2>Performance Analysis</h2>
+      
+      <div class="algorithm-box">
+        <h4>Video Recommendations: Suggesting content that users are likely to enjoy</h4>
         <p>
-          The space and time complexity of the identified algorithms are
-          presented...
+          Collaborative Filtering: Recommends content based on the preferences of similar users.
+          Content-Based Filtering: Recommends content similar to what the user has previously watched.
         </p>
       </div>
-    </section>
-    <script>
-      function toggleMenu() {
-        const menu = document.querySelector(".menu");
-        menu.classList.toggle("show");
-      }
-    </script>
-  </body>
+      
+      <div class="algorithm-box">
+        <h4>Content Licensing and Acquisition: Strategizing and negotiating with content creators to acquire rights for popular content</h4>
+        <p>
+          Linear Programming: Optimizes the allocation of budget for content acquisition.
+          Game Theory Models: Analyzes competitive strategies in content bidding.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>Regional Content Customization: Adapting and customizing content for regional tastes and languages</h4>
+        <p>
+          Natural Language Processing (NLP): Translates and localizes content.
+          Cluster Analysis: Identifies regional content preferences and trends.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>Parental Controls and Kids Profiles: Ensuring a safe and appropriate viewing experience for children</h4>
+        <p>
+          Rule-Based Filtering: Restricts access to content based on ratings and parental settings.
+          Age Detection Algorithms: Suggests age-appropriate content based on profile settings.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>User Data Privacy and Security: Protecting user information and ensuring compliance with regulations</h4>
+        <p>
+          Encryption Algorithms: Secures data during transmission and storage.
+          Anomaly Detection: Identifies and mitigates security breaches and data leaks.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>Partnerships and Collaborations: Forming strategic partnerships to enhance reach and accessibility</h4>
+        <p>
+          Network Optimization Algorithms: Improves content delivery through partner networks.
+          Revenue Sharing Models: Allocates revenue fairly among partners based on engagement metrics.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>Customer Support and Satisfaction: Providing timely and effective customer support</h4>
+        <p>
+          Chatbot AI: Automates responses to common customer queries.
+          Sentiment Analysis: Monitors customer feedback to identify and address issues proactively.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>Subscription Pricing Strategy: Developing dynamic pricing models to attract diverse user segments</h4>
+        <p>
+          Price Elasticity Models: Analyzes the impact of price changes on subscriber numbers.
+          A/B Testing: Tests different pricing strategies to find the most effective one.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>Live Streaming and Interactive Content: Offering real-time streaming and interactive features</h4>
+        <p>
+          RTMP (Real-Time Messaging Protocol): Ensures low-latency live streaming.
+          Interactive Video Algorithms: Manages user interactions and real-time feedback during live streams.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>User Interface Personalization: Creating a personalized and intuitive user interface</h4>
+        <p>
+          Machine Learning Models: Personalizes the UI based on user behavior and preferences.
+          A/B Testing: Continuously tests and optimizes UI elements for better user engagement.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>Content Delivery Network (CDN) Optimization: Efficiently delivering content to users around the world</h4>
+        <p>
+          Load Balancing Algorithms: Distributes content delivery load across multiple servers.
+          Edge Caching: Stores content closer to the user's location to reduce latency.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>Data Analytics and Insights: Analyzing vast amounts of user data to drive business decisions</h4>
+        <p>
+          Big Data Analytics: Processes and analyzes large datasets to extract meaningful insights.
+          Predictive Analytics: Forecasts user behavior and trends to inform strategic decisions.
+        </p>
+      </div>
+      
+      <div class="algorithm-box">
+        <h4>Algorithm: Content-Based Filtering</h4>
+        <p>
+          In addition to collaborative filtering, Netflix employs
+          content-based filtering. This algorithm recommends content based
+          on the characteristics of the shows and movies a user has
+          previously watched, such as genre, director, and cast.
+        </p>
+      </div>
+      <div class="algorithm-box">
+        <h4>User Engagement Analysis: Understanding user behavior to improve content and service delivery</h4>
+        <p>
+          Association Rule Mining: Discovers patterns in user interactions.
+          Cluster Analysis: Segments users based on viewing habits.
+        </p>
+      </div>
+      
+    </div>
+    </div>
+  </section>
+  <section id="codes" class="section">
+    <div class="content-box">
+      <p>Code section content goes here.</p>
+    </div>
+  </section>
+  <section id="performance-analysis" class="section">
+    <div class="content-box">
+      <p>Performance analysis content goes here.</p>
+    </div>
+  </section>
+  <script>
+    function toggleMenu() {
+      var menu = document.querySelector(".menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+
 </html>
